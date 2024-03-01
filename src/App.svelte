@@ -26,7 +26,7 @@
 
   <main>
     <div class="flex justify-between">
-      <div class="flex flex-col p-4 space-y-4 bg-red-300">
+      <div class="flex flex-col px-4 pt-4 pb-20 space-y-4 bg-red-300">
         <button on:click={() => playNote('D4')} class="bg-black p-4 text-2xl">
             <strong>D</strong>  
           </button>
@@ -37,11 +37,11 @@
             <strong>E</strong>  
        </button>
     </div>
-  <div class="bg-green-300">
+  <div class="px-4 pt-4 pb-20 bg-green-300">
     Placeholder for guitar headstock image
   </div>
 
-  <div class="flex flex-col p-4 space-y-4 bg-blue-300">  
+  <div class="flex flex-col  px-4 pt-4 pb-20 space-y-4 bg-blue-300">  
       <button on:click={() => playNote('G4')} class="bg-black p-4 text-2xl">
         <strong>G</strong>  
       </button>
