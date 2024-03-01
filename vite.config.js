@@ -5,19 +5,6 @@ import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
   plugins: [
-    svelte(),
-
-    // Tailwind and Autoprefixer plugins
-    tailwindcss(),
-    autoprefixer() 
-  ],
-
-  css: {
-    postcss: {
-      plugins: [
-        tailwindcss(),
-        autoprefixer()
-      ]
-    }
-  }
+    svelte()
+  ] 
 });
