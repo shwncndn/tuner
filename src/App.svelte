@@ -1,7 +1,8 @@
 <script>
   import './styles.css';
-
   import * as Tone from 'tone';
+  import guitarHeadstock from './images/TunerGuitar.png';
+
 
   const synth = new Tone.Synth().toDestination();
 
@@ -71,8 +72,8 @@
         <strong>E</strong>
       </button>
     </div>
-    <div class="flex items-center justify-center pt-4 bg-guitar bg-contain bg-no-repeat bg-center h-[700px] w-[1000px]">
-      <!-- Remove the placeholder text -->
+    <div class="flex items-center justify-center pt-4 h-[700px] w-[1000px]">
+      <img src="{guitarHeadstock}" alt="Guitar Headstock" class="object-contain w-full h-full">
     </div>
     <div class="absolute top-[130px] right-[333px] w-16 h-72 z-10 flex flex-col space-y-4">
       <button on:click={() => playNote('G4')} class="relative w-full h-full rounded-full bg-slate-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.3),0_2px_4px_rgba(0,0,0,0.4)] flex justify-center items-center text-2xl font-bold text-white text-shadow-[0_1px_2px_rgba(0,0,0,0.6)] cursor-pointer transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95 active:shadow-[inset_0_0_10px_rgba(0,0,0,0.4),0_1px_2px_rgba(0,0,0,0.4)] before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:transform before:-translate-x-1/2 before:-translate-y-1/2 before:w-[60%] before:h-[60%] before:rounded-full before:bg-[rgba(255,255,255,0.2)] before:pointer-events-none">
