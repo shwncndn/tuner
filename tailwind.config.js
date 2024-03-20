@@ -2,7 +2,9 @@
 export default {
   content: ['./index.html', './src/**/*.{svelte,js,ts}'],
   theme: {
-    extend: {},
+    extend: {backgroundImage: {
+      'guitar': "url('/Users/shwncndn/tuner/src/assets/TunerGuitar.png')"
+     }},
   },
   plugins: [],
 }
