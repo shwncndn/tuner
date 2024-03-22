@@ -48,13 +48,29 @@
 ]
 
   let synthOn = false;
+  let currentNote = null;
+  let intervalId = null;
 
   function playNote(note) {
-    synthOn = !synthOn;
-    if (synthOn) {
-      synth.triggerAttack(note); 
-    } else {
+    if (currentNote === note) {
+      // If the same note is clicked again, stop the note and clear the interval
       synth.triggerRelease();
+      clearInterval(intervalId);
+      currentNote = null;
+    } else {
+      // If a different note is clicked, stop the previous note and start the new one
+      synth.triggerRelease();
+      clearInterval(intervalId);
+      currentNote = note;
+      synth.triggerAttack(note);
+
+      // Set up the interval to play the note for a whole tone, stop for a half tone, and repeat
+      intervalId = setInterval(() => {
+        synth.triggerRelease();
+        setTimeout(() => {
+          synth.triggerAttack(note);
+        }, Tone.Time('2n').toSeconds() * 1000); // Convert half tone duration to milliseconds
+      }, Tone.Time('1m').toSeconds() * 1000); // Convert whole tone duration to milliseconds
     }
   }
 </script>
